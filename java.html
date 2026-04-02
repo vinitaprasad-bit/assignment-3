@@ -1,32 +1,494 @@
-
-<html>
+**TASK-1** (DID WITH JAVA CODE INSIDE HTML FILE)
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Task 1</title>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Find Second Largest Number</title>
+
+    <!-- Simple Responsive Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-top: 15px;
+        }
+    </style>
 </head>
+
 <body>
-<h2>Find Second Largest Number</h2>
-<p id="result"></p>
-<script>
-let arr = [23, 45, 67, 89, 12, 90, 44];
 
-let largest = -Infinity;
-let secondLargest = -Infinity;
+    <!-- Main Container -->
+    <div class="container">
+        <h2>Find Second Largest Number</h2>
+        <p id="result"></p>
+    </div>
 
-for (let i = 0; i < arr.length; i++) {
+    <script>
+        // Creating an array of numbers
+        let arr = [23, 45, 67, 89, 12, 90, 44];
 
-    if (arr[i] > largest) {
-        secondLargest = largest;
-        largest = arr[i];
-    }
+        // Taking two variables to store largest and second largest values
+        // Initially setting them to smallest possible value
+        let largest = -Infinity;
+        let secondLargest = -Infinity;
 
-    else if (arr[i] > secondLargest && arr[i] != largest) {
-        secondLargest = arr[i];
-    }
+        // Loop to check each number in array
+        for (let i = 0; i < arr.length; i++) {
 
-}
-document.getElementById("result").innerHTML =
-"Second Largest Number is: " + secondLargest;
+            // If current number is greater than largest
+            if (arr[i] > largest) {
 
-</script>
+                // Then current largest becomes second largest
+                secondLargest = largest;
+
+                // And update largest
+                largest = arr[i];
+            }
+
+            // If number is smaller than largest but greater than second largest
+            // Also making sure it is not equal to largest
+            else if (arr[i] > secondLargest && arr[i] != largest) {
+
+                // Update second largest
+                secondLargest = arr[i];
+            }
+        }
+
+        // Showing result on the webpage
+        document.getElementById("result").innerHTML =
+            "Second Largest Number is: " + secondLargest;
+    </script>
+
+</body>
+</html>
+
+**TASK-2** (DID PROPER JAVA CODE INSIDE HTML FILE AND ADDED COMMENTS)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Important Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Return Unique Elements</title>
+
+    <!-- Basic Responsive Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: #ffffff;
+            padding: 20px;
+            width: 90%;
+            max-width: 420px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        /* Making it better for smaller screens */
+        @media (max-width: 500px) {
+            .box {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Main Content Box -->
+    <div class="box">
+        <h2>Return Unique Elements</h2>
+        <p id="output"></p>
+    </div>
+
+    <script>
+
+        // Function to find unique elements from two arrays
+        function uniqueElements(arr1, arr2) {
+
+            // Combine both arrays into one
+            let combined = arr1.concat(arr2);
+
+            // Create empty array to store unique values
+            let unique = [];
+
+            // Loop through combined array
+            for (let i = 0; i < combined.length; i++) {
+
+                // Check if element is not already in unique array
+                if (!unique.includes(combined[i])) {
+
+                    // If not present, then add it
+                    unique.push(combined[i]);
+                }
+            }
+
+            // Return final unique array
+            return unique;
+        }
+
+        // Creating two arrays
+        let array1 = [12, 13, 14, 15];
+        let array2 = [13, 14, 16, 17];
+
+        // Calling function and storing result
+        let result = uniqueElements(array1, array2);
+
+        // Displaying result on webpage
+        document.getElementById("output").innerHTML =
+            "Unique Elements: " + result;
+
+    </script>
+
+</body>
+</html>
+
+**TASK-3** (DID WITH PROPER JAVA CODE AND HTML FILE)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>Student Score Analysis</title>
+
+    <!-- Simple Responsive Design -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 20px;
+            width: 90%;
+            max-width: 450px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #444;
+            margin-top: 15px;
+        }
+
+        /* Responsive for small screens */
+        @media (max-width: 500px) {
+            .card {
+                padding: 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Main Card -->
+    <div class="card">
+        <h2>Student Score Analysis</h2>
+        <p id="student"></p>
+    </div>
+
+    <script>
+
+        // Creating an array of student objects
+        let students = [
+            { name: 'VINITA', age: 19, scores: [78, 85, 92] },
+            { name: 'RITIKA', age: 20, scores: [88, 90, 76] },
+            { name: 'KIRAN', age: 21, scores: [95, 80, 85] }
+        ];
+
+        // Variable to store top student name
+        let topStudent = "";
+
+        // Variable to store highest average marks
+        let highestAverage = 0;
+
+        // Loop through each student
+        for (let i = 0; i < students.length; i++) {
+
+            // Get scores array of current student
+            let scores = students[i].scores;
+
+            // Variable to calculate total marks
+            let sum = 0;
+
+            // Loop through scores
+            for (let j = 0; j < scores.length; j++) {
+                sum += scores[j];   // adding each score
+            }
+
+            // Calculating average marks
+            let average = sum / scores.length;
+
+            // Checking if current average is highest
+            if (average > highestAverage) {
+
+                // Update highest average
+                highestAverage = average;
+
+                // Store student name
+                topStudent = students[i].name;
+            }
+        }
+
+        // Displaying result on webpage
+        document.getElementById("student").innerHTML =
+            "Top Student: " + topStudent + "<br>Average Score: " + highestAverage;
+
+    </script>
+
+</body>
+</html>
+
+**TASK-4** (DID WITH PROPER JAVA CODE INSIDE HTML FILE)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Countdown Timer</title>
+
+    <!-- Responsive Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 25px;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        #timer {
+            font-size: 48px;
+            margin: 20px 0;
+            color: #222;
+        }
+
+        button {
+            padding: 10px 18px;
+            margin: 8px;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-size: 16px;
+            color: red;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 500px) {
+            #timer {
+                font-size: 36px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h2>1 Hour Countdown Timer</h2>
+
+        <!-- Timer Display -->
+        <div id="timer">60:00</div>
+
+        <!-- Buttons -->
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+
+        <!-- Message Display -->
+        <p id="message"></p>
+    </div>
+
+    <script>
+
+        // Total time in seconds (1 hour = 3600 seconds)
+        let time = 3600;
+
+        // Variable to store interval
+        let timer;
+
+        // Function to update timer display
+        function updateDisplay() {
+
+            // Convert seconds into minutes and seconds
+            let minutes = Math.floor(time / 60);
+            let seconds = time % 60;
+
+            // Add 0 if seconds are less than 10
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            // Show time on screen
+            document.getElementById("timer").innerHTML = minutes + ":" + seconds;
+        }
+
+        // Function to start timer
+        function startTimer() {
+
+            // Prevent multiple intervals running
+            if (!timer) {
+
+                timer = setInterval(function () {
+
+                    // If time is still left
+                    if (time > 0) {
+                        time--;
+                        updateDisplay();
+                    }
+
+                    // When time ends
+                    else {
+                        clearInterval(timer);
+                        document.getElementById("message").innerHTML = "Time is up!";
+                    }
+
+                }, 1000);
+            }
+        }
+
+        // Function to pause timer
+        function pauseTimer() {
+            clearInterval(timer);
+            timer = null;
+        }
+
+        // Function to reset timer
+        function resetTimer() {
+            clearInterval(timer);
+            timer = null;
+
+            // Reset time back to 1 hour
+            time = 3600;
+
+            updateDisplay();
+
+            // Clear message
+            document.getElementById("message").innerHTML = "";
+        }
+
+    </script>
+
 </body>
 </html>
